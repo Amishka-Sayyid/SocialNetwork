@@ -26,6 +26,10 @@ _Optional_
 
 🏹What useful external sources helped you complete the assignment (e.g Youtube tutorials)?
 
+    -https://youtu.be/t90U6iuv8wo?si=kuDPz41otUkt7Ig9
+
+    -https://youtu.be/ICNulnfQvd8?si=44Zu63u5fkHS_YLT
+
 🏹What errors or bugs did you encounter while completing your assignment? How did you solve them?
 
 🏹What went really well and what could have gone better?
