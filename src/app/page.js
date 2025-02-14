@@ -1,9 +1,7 @@
-import ResponsiveAppBar from "@/components/ResponsiveAppBar";
-
 export default function HomePage() {
   return (
     <>
-      <ResponsiveAppBar />
+      <h1>homepage</h1>
     </>
   );
 }
