@@ -149,6 +149,7 @@ export default function ResponsiveAppBar() {
             <Tooltip title="User Actions">
               <SignedOut>
                 <SignInButton />
+
                 <SignUpButton />
               </SignedOut>
               <SignedIn>
