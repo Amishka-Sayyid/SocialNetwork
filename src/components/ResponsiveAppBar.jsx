@@ -14,7 +14,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-
+import Link from "next/link";
 import {
   SignInButton,
   SignedIn,
@@ -23,7 +23,10 @@ import {
   SignUpButton,
 } from "@clerk/nextjs";
 
-const pages = ["HomePage", "about", "contact"];
+const pages = [
+  { name: "HomePage", link: "/" },
+  { name: "Posts", link: "/posts" },
+];
 
 export default function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -94,8 +97,12 @@ export default function ResponsiveAppBar() {
               sx={{ display: { xs: "block", md: "none" } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                <MenuItem key={page.name}>
+                  <Link href={page.link} passHref>
+                    <Typography sx={{ textAlign: "center" }}>
+                      {page.name}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -125,11 +132,15 @@ export default function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.name}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                <Link href={page.link} passHref>
+                  <Typography sx={{ textAlign: "center" }}>
+                    {page.name}
+                  </Typography>
+                </Link>
               </Button>
             ))}
           </Box>
