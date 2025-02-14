@@ -30,6 +30,8 @@ _Optional_
 
     -https://youtu.be/ICNulnfQvd8?si=44Zu63u5fkHS_YLT
 
+    -https://www.sandromaglione.com/articles/supabase-database-user-sign-up-and-row-level-security
+
 🏹What errors or bugs did you encounter while completing your assignment? How did you solve them?
 
 🏹What went really well and what could have gone better?
