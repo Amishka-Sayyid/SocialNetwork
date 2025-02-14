@@ -1,8 +1,15 @@
 import { SignIn } from "@clerk/nextjs";
-import { revalidatePath } from "next/cache";
+import { useEffect } from "react";
 import { redirect } from "next/navigation";
 
 export default function SignInPage() {
+  const { user } = useClerk();
+
+  useEffect(() => {
+    if (user) {
+      redirect("/createProfile");
+    }
+  }, [user]);
   return (
     <>
       <div
