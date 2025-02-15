@@ -6,8 +6,9 @@ export default function CreateProfile() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [username, setUsername] = useState("");
+  const [profileSaved, setProfileSaved] = useState(false);
 
-  // save user profile details
+  // Save user profile details
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -17,7 +18,6 @@ export default function CreateProfile() {
 
     setLoading(true);
     setError(null);
-
     setUsername(username);
 
     try {
@@ -36,7 +36,8 @@ export default function CreateProfile() {
       const data = await response.json();
       console.log(data.message);
       window.alert("Profile saved successfully!");
-      // Redirect to the newly created profile page
+
+      setProfileSaved(true);
     } catch (error) {
       setError(error.message);
       console.error("Error:", error);
@@ -81,16 +82,20 @@ export default function CreateProfile() {
         <button
           type="submit"
           className="bg-emerald-500 border-2 p-1 m-4 hover:bg-emerald-400 rounded-lg"
-          disabled={loading}
+          disabled={loading || profileSaved}
         >
-          {loading ? "Saving..." : "Save Profile"}
+          {loading
+            ? "Saving..."
+            : profileSaved
+            ? "Profile Saved"
+            : "Save Profile"}
         </button>
       </form>
 
       {error && <p className="text-red-500">{error}</p>}
 
-      {/* Adding link to the user page dynamically */}
-      {username && (
+      {/* Show link to the user page if the profile is saved */}
+      {profileSaved && username && (
         <button className="bg-blue-400 border-2 p-1 m-4 hover:bg-blue-200 rounded-lg">
           <Link href={`/user/${username}`}>Go to User Page</Link>
         </button>
