@@ -2,16 +2,18 @@
 
 import { SignIn, useClerk } from "@clerk/nextjs";
 import { useEffect } from "react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/router";
 
 export default function SignInPage() {
   const { user } = useClerk();
 
+  const router = useRouter();
+
   useEffect(() => {
     if (user) {
-      redirect("/createProfile");
+      router.push("/createProfile");
     }
-  }, [user]);
+  }, [user, router]);
 
   return (
     <>

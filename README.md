@@ -34,6 +34,10 @@ _Optional_
 
     -https://youtu.be/HvOvdD2nX1k?si=C0wPQFsOX-enifTk
 
+    -https://clerk.com/docs/integrations/databases/supabase when trying to save the clerk id into supabase went through all process till last one where it wasn't ok for me in the end i tried the method of just getting the id from clerk and saving it in the db and in the db each user again has a local id which later ill use for the postsid foreign key.
+
+    -
+
 🏹What errors or bugs did you encounter while completing your assignment? How did you solve them?
 
 🏹What went really well and what could have gone better?
