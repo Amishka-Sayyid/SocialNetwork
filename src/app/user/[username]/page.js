@@ -1,17 +1,45 @@
-//we have access to the clerk userId
+import { db } from "@/utils/dbConnection";
 import { auth } from "@clerk/nextjs/server";
-currentUser;
-export default async function UserProfilePage() {
-  //we have destructured (extracted) the userId value from auth
+import Image from "next/image";
+
+export default async function UserProfilePage({ params }) {
+  // Fetching userId from Clerk
   const { userId } = await auth();
-  const user = await currentUser();
-  return (
-    <>
-      <h1>User profile page</h1>
-      <h2>Super secret info, do not steal!</h2>
-      {/* This is the userId value that clerk assigns to a user when they sign up */}
-      {/* we can store this value in a database to relate it to posts, comments... */}
-      <p>{user}</p>
-    </>
-  );
+
+  const { username } = params;
+
+  try {
+    const user = await db.query(
+      `SELECT * FROM userprofile WHERE username = $1 AND user_id = $2`,
+      [username, userId]
+    );
+
+    if (user.rows.length === 0) {
+      return <h1>User not found</h1>;
+    }
+
+    const wrangledUser = user.rows[0];
+    console.log(wrangledUser);
+
+    return (
+      <>
+        <h1>User Profile Page</h1>
+
+        <div>
+          <h1>Username: {wrangledUser.username}</h1>
+          <Image
+            src={wrangledUser.imgsrc}
+            alt="User profile image"
+            width={100}
+            height={100}
+            style={{ objectFit: "contain" }}
+          />
+          <h3>About: {wrangledUser.about}</h3>
+        </div>
+      </>
+    );
+  } catch (error) {
+    console.error("Error fetching user profile:", error);
+    return <h1>Error fetching user profile</h1>;
+  }
 }
