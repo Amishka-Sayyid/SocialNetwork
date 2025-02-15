@@ -1,6 +1,3 @@
-//Your user should only be able to access this page once they have
-// been redirected from the sign-up part.
-
 // We need a form so the user can enter their user profile data!
 // Maybe you will make some of your form REQUIRED, maybe you'll have a cool way of keeping the sumitted data valid?
 
