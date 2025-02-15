@@ -88,7 +88,7 @@ export default function CreateProfile() {
             ? "Saving..."
             : profileSaved
             ? "Profile Saved"
-            : "Save Profile"}
+            : "Saved Profile"}
         </button>
       </form>
 
