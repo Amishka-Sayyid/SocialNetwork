@@ -63,10 +63,20 @@ export default function CreateProfile() {
         />
 
         <label htmlFor="about">About: </label>
-        <textarea name="about" id="about" className="text-emerald-600 h-20" />
+        <textarea
+          name="about"
+          id="about"
+          required
+          className="text-emerald-600 h-20"
+        />
 
         <label htmlFor="imgSrc">Profile Image URL: </label>
-        <textarea name="imgSrc" id="imgSrc" className="text-emerald-600 h-20" />
+        <textarea
+          name="imgSrc"
+          id="imgSrc"
+          required
+          className="text-emerald-600 h-20"
+        />
 
         <button
           type="submit"
