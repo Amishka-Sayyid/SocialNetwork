@@ -26,6 +26,7 @@ import {
 const pages = [
   { name: "HomePage", link: "/" },
   { name: "Posts", link: "/posts" },
+  { name: "Profile", link: "/profile" },
 ];
 
 export default function ResponsiveAppBar() {

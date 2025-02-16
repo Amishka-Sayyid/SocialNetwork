@@ -14,7 +14,7 @@ export default function CreateProfile() {
     const formData = new FormData(event.target);
     const username = formData.get("username");
     const about = formData.get("about");
-    const imgSrc = formData.get("imgSrc");
+    const imgsrc = formData.get("imgsrc");
 
     setLoading(true);
     setError(null);
@@ -26,7 +26,7 @@ export default function CreateProfile() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, about, imgSrc }),
+        body: JSON.stringify({ username, about, imgsrc }),
       });
 
       if (!response.ok) {
@@ -71,10 +71,10 @@ export default function CreateProfile() {
           className="text-emerald-600 h-20"
         />
 
-        <label htmlFor="imgSrc">Profile Image URL: </label>
+        <label htmlFor="imgsrc">Profile Image URL: </label>
         <textarea
-          name="imgSrc"
-          id="imgSrc"
+          name="imgsrc"
+          id="imgsrc"
           required
           className="text-emerald-600 h-20"
         />
