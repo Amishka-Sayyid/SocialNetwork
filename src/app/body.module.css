@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Quintessential&display=swap");
+
+.h1 {
+  font-family: "Quintessential", serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: large;
+}
+.h2 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: large;
+}
+
+.section {
+  background-image: url("https://www.shutterstock.com/image-photo/multi-ethnic-peoples-hands-raised-260nw-225294574.jpg");
+  min-height: 30vh;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(22, 22, 22, 0.5);
+  border-radius: 1rem;
+  z-index: -1;
+}
