@@ -94,12 +94,23 @@ export default function CreateProfile() {
 
       {error && <p className="text-red-500">{error}</p>}
 
-      {/* Show link to the user page if the profile is saved */}
+      {/* Showing link to the user page once profile is saved */}
       {profileSaved && username && (
         <button className="bg-blue-400 border-2 p-1 m-4 hover:bg-blue-200 rounded-lg">
           <Link href={`/user/${username}`}>Go to User Page</Link>
         </button>
       )}
+
+      <h3 className="mb-4">
+        Navigate back to your profile to update or delete your details by
+        clicking below.
+      </h3>
+      <Link
+        href={`/profile`}
+        className="text-black-500 hover:bg-blue-500 w-full mt-6 p-1 rounded-md border-2 bg-blue-200 text-center"
+      >
+        Go to Profile
+      </Link>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { db } from "@/utils/dbConnection";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 export default async function updateProfile({ params }) {
   const slug = await params;
 
@@ -76,6 +77,16 @@ export default async function updateProfile({ params }) {
             update
           </button>
         </form>
+
+        <h3 className="mb-4">
+          Click below to navigate back to your profile page
+        </h3>
+        <Link
+          href={`/profile`}
+          className="text-black-500 hover:bg-blue-500 w-full mt-6 p-1 rounded-md border-2 bg-blue-200 text-center"
+        >
+          Go to Profile
+        </Link>
       </div>
     </>
   );
