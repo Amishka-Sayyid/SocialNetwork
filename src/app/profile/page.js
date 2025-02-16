@@ -11,7 +11,19 @@ export default async function Profile() {
     [id]
   );
   if (!user.rows.length) {
-    return <h1>User profile not found!</h1>;
+    return (
+      <div className="flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white">
+        <h1>Welcome! Please create your profile to get started</h1>
+
+        {/* link to Create Profile Link */}
+        <Link
+          href="/createProfile"
+          className="text-black-500 hover:bg-green-500 w-full mt-6 p-1 rounded-md border-2 bg-emerald-200 text-center"
+        >
+          Create Profile
+        </Link>
+      </div>
+    );
   }
 
   const username = user.rows[0].username;
@@ -31,14 +43,6 @@ export default async function Profile() {
 
       <h2>Manage your profile settings here.</h2>
       <nav className="flex items-center justify-center p-2 gap-3">
-        {/* Create Profile Link */}
-        <Link
-          href="/createProfile"
-          className="text-black-500 hover:bg-green-500 w-full mt-6 p-1 rounded-md border-2 bg-emerald-200"
-        >
-          Create Profile
-        </Link>
-
         {/* Update Profile Link */}
         <Link
           href={`/profile/${id}/update-profile`}
