@@ -42,7 +42,7 @@ export default async function Profile() {
         {/* Update Profile Link */}
         <Link
           href={`/profile/${id}/update-profile`}
-          className="text-emerald-500 hover:text-blue-700 w-full mt-6 p-1 rounded-md border-2 bg-white"
+          className="text-emerald-500 hover:text-blue-700 w-full mt-6 p-1 rounded-md border-2 bg-white text-center"
         >
           Update Profile
         </Link>
