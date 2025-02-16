@@ -1,19 +1,8 @@
 "use client";
 
-import { SignIn, useClerk } from "@clerk/nextjs";
-import { useEffect } from "react";
-import { revalidatePath, redirect } from "next/cache";
+import { SignIn } from "@clerk/nextjs";
 
 export default function SignInPage() {
-  const { user } = useClerk();
-
-  useEffect(() => {
-    if (user) {
-      revalidatePath("/createProfile");
-      redirect("/createProfile");
-    }
-  }, [user]);
-
   return (
     <>
       <div

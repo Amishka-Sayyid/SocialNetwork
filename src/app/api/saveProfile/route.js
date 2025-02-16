@@ -6,12 +6,12 @@ export async function POST(req) {
   try {
     const { userId } = await auth(req);
 
-    const { username, about, imgSrc } = await req.json();
+    const { username, about, imgsrc } = await req.json();
 
     // Insert the profile data into the database
     await db.query(
-      `INSERT INTO userprofile (username, about, imgSrc, user_id) VALUES ($1, $2, $3, $4)`,
-      [username, about, imgSrc, userId]
+      `INSERT INTO userprofile (username, about, imgsrc, user_id) VALUES ($1, $2, $3, $4)`,
+      [username, about, imgsrc, userId]
     );
 
     // Send success response
