@@ -88,7 +88,7 @@ export default function CreateProfile() {
             ? "Saving..."
             : profileSaved
             ? "Profile Saved"
-            : "Saved Profile"}
+            : "Add Profile"}
         </button>
       </form>
 
@@ -100,17 +100,6 @@ export default function CreateProfile() {
           <Link href={`/user/${username}`}>Go to User Page</Link>
         </button>
       )}
-
-      <h3 className="mb-4">
-        Navigate back to your profile to update or delete your details by
-        clicking below.
-      </h3>
-      <Link
-        href={`/profile`}
-        className="text-black-500 hover:bg-blue-500 w-full mt-6 p-1 rounded-md border-2 bg-blue-200 text-center"
-      >
-        Go to Profile
-      </Link>
     </div>
   );
 }
