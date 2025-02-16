@@ -2,17 +2,17 @@
 
 import { SignUp, useClerk } from "@clerk/nextjs";
 import { useEffect } from "react";
-import { revalidatePath, redirect } from "next/cache";
+import { useRouter } from "next/router";
 
 export default function SignUpPage() {
   const { user } = useClerk();
+  const router = useRouter();
 
   useEffect(() => {
     if (user) {
-      revalidatePath("/createProfile");
-      redirect("/createProfile");
+      router.push("/createProfile");
     }
-  }, [user]);
+  }, [user, router]);
 
   return (
     <>
