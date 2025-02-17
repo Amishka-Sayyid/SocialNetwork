@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
 import { db } from "@/utils/dbConnection";
 import bodystyles from "../body.module.css";
+import userstyles from "../userprofile.module.css";
 export default async function Profile() {
   const { userId } = await auth();
   const id = userId;
@@ -12,7 +13,9 @@ export default async function Profile() {
   );
   if (!user.rows.length) {
     return (
-      <div className="flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white">
+      <div
+        className={`${userstyles.section} flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white`}
+      >
         <h1 className={bodystyles.h1}>
           Welcome! Please create your profile to get started
         </h1>
@@ -32,10 +35,16 @@ export default async function Profile() {
 
   return (
     <>
-      <div className="flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white">
-        <h1 className={bodystyles.h1}>Welcome to Your Profile, {username}!</h1>
+      <div
+        className={`${userstyles.section} flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white`}
+      >
+        <h1 className={`${bodystyles.h1} text-black`}>
+          Welcome to Your Profile, {username}!
+        </h1>
 
-        <h2 className={bodystyles.h2}>Link to view your page is here</h2>
+        <h2 className={`${bodystyles.h2} text-black`}>
+          Link to view your page is here
+        </h2>
 
         <Link
           href={`/user/${username}`}
@@ -44,7 +53,9 @@ export default async function Profile() {
           User Page
         </Link>
 
-        <h2 className={bodystyles.h2}>Manage your profile settings here.</h2>
+        <h2 className={`${bodystyles.h2} text-black`}>
+          Manage your profile settings here.
+        </h2>
         <nav className="flex items-center justify-center p-2 gap-3">
           {/* Update Profile Link */}
           <Link
