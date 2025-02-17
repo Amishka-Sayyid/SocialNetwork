@@ -38,6 +38,8 @@ _Required_
 
     🐿️ As a user, I want to delete my posts, so that I can remove duplicated content accidentally posted.
 
+    added meta data to most pages (createprofile,signin,signup had to remove as i had issue with use client and the metadata  but all others i have metadata for them)
+
 🎯 Were there any requirements or goals that you were unable to achieve?
 
     🏹 Let users follow each other by establishing a follower and followee relationship between profiles.
