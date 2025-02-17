@@ -20,9 +20,10 @@ export default async function UserProfilePage({ params }) {
 
   const wrangledUser = user.rows[0];
 
-  const posts = await db.query(`SELECT * FROM socialposts WHERE userid = $1`, [
-    wrangledUser.id,
-  ]);
+  const posts = await db.query(
+    `SELECT * FROM socialposts WHERE userid = $1 ORDER BY id DESC`,
+    [wrangledUser.id]
+  );
 
   // Return the user profile with posts
   return (

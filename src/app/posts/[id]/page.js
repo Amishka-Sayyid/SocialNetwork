@@ -93,6 +93,13 @@ export default async function IdPage({ params }) {
             </button>
           </fieldset>
         </form>
+        <h2>click here to return to profile page</h2>
+        <Link
+          href="/profile"
+          className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 p-2 rounded text-black"
+        >
+          Profile
+        </Link>
       </div>
     </>
   );
