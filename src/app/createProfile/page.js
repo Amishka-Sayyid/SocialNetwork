@@ -1,11 +1,5 @@
 "use client";
 
-export const metadata = {
-  title: "Create Profile - Social Network",
-  description:
-    "Create your personal profile on Social Network. Set up your account, add your information, and start connecting with others.",
-};
-
 import { useState } from "react";
 import Link from "next/link";
 
