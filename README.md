@@ -32,7 +32,13 @@ _Required_
 
     -done this 🏹 Allow users to view other profiles directly from posts they see on the global timeline, using a dynamic users route.
 
+    -🐿️ As a user, I want to edit the content of my posts, so that I can correct any spelling mistakes or add content that I forgot.
+
+    🐿️ As a user, I want to delete my posts, so that I can remove duplicated content accidentally posted.
+
 🎯 Were there any requirements or goals that you were unable to achieve?
+
+    only this left 🎯 Create and display an error/not found page if the user visits a page that doesn’t exist.
 
 🎯 If so, what was it that you found difficult about these tasks?
 
