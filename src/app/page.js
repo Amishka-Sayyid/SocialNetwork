@@ -1,48 +1,30 @@
-import bodystyles from "./body.module.css";
+import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
+import { db } from "@/utils/dbConnection";
 
-export default function HomePage() {
+export default async function PostsPage() {
+  const { userId } = await auth();
+  const id = userId;
+
+  // Get user profile
+  const user = await db.query(`SELECT id FROM userprofile WHERE user_id = $1`, [
+    id,
+  ]);
+  if (!user.rows.length) {
+    return <div>Profile not found. Please create one.</div>;
+  }
+
+  const personalid = user.rows[0].id;
+
   return (
     <>
-      <div
-        className={`${bodystyles.section} flex justify-center flex-col items-center w-full sm:w-[500px] md:w-[600px] lg:w-[800px] p-8 rounded-lg shadow-lg bg-white`}
+      <h1>Posts Page</h1>
+      <Link
+        href={`/posts/${personalid}`}
+        className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 p-2 rounded text-black"
       >
-        <h1 className={bodystyles.h1}>
-          Every Image Tells a Story — What&apos;s Yours?
-        </h1>
-
-        <h2 className={bodystyles.h2}>
-          Share your moments, ideas, and creativity with the world. Whether it’s
-          a snapshot of life or a masterpiece in the making, this is your space
-          to express, inspire, and connect.
-        </h2>
-      </div>
-
-      <div
-        className={`${bodystyles.section} flex justify-center flex-col items-center w-full sm:w-[500px] md:w-[600px] lg:w-[800px] p-8 rounded-lg shadow-lg bg-white`}
-      >
-        <h1 className={bodystyles.h1}>Navigate Your Next Adventure</h1>
-        <nav className="flex  items-center justify-center p-2 gap-3">
-          <Link
-            href="/"
-            className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 p-2 rounded text-black"
-          >
-            Homepage
-          </Link>
-          <Link
-            href="/posts"
-            className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 p-2 rounded text-black"
-          >
-            All Posts
-          </Link>
-          <Link
-            href="/profile"
-            className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 p-2 rounded text-black"
-          >
-            Profile
-          </Link>
-        </nav>
-      </div>
+        Create Post
+      </Link>
     </>
   );
 }
