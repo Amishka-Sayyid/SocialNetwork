@@ -33,7 +33,7 @@ export default async function PostsPage() {
           add Post
         </Link>
       </div>
-      <div className="flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white">
+      <div className="min-w-full flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white">
         <h1>all posts</h1>
         <div className="grid grid-cols-3 gap-4">
           {posts.rows.length === 0 ? (
@@ -51,8 +51,8 @@ export default async function PostsPage() {
                       "https://www.shutterstock.com/image-vector/image-icon-trendy-flat-style-600nw-643080895.jpg"
                     }
                     alt={post.title || "No title available"}
-                    width={200}
-                    height={200}
+                    width={300}
+                    height={300}
                     style={{ objectFit: "cover" }}
                     className="w-full h-full"
                   />
