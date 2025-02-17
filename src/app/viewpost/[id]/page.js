@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Post- Social Network",
+  description:
+    "Read this engaging post on Social Network! Dive into the conversation and share your thoughts with the community.",
+};
+
 import { db } from "@/utils/dbConnection";
 import Link from "next/link";
 import Image from "next/image";

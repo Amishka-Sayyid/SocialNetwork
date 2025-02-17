@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Delete Profile - Social Network",
+  description:
+    "Are you sure you want to delete your profile? This action will remove your personal information, posts, and data from Social Network permanently. Take a moment to think it over.",
+};
+
 import { db } from "@/utils/dbConnection";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";

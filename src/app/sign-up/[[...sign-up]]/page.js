@@ -1,4 +1,10 @@
-"use client";
+export const metadata = {
+  title: "Sign Up - Social Network",
+  description:
+    "Create an account on Social Network. Join our community, share your thoughts, and connect with friends and family.",
+};
+
+("use client");
 
 import { SignUp } from "@clerk/nextjs";
 

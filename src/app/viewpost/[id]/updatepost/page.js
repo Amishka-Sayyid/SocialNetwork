@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Update Post - Social Network",
+  description:
+    "Edit your post on Social Network. Make changes, update content, and share your updated thoughts.",
+};
+
 import { db } from "@/utils/dbConnection";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";

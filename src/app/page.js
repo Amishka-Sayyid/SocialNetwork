@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Social Network - Homepage",
+  description:
+    "Welcome to Social Network! Connect with friends, share moments, and discover new people in a vibrant online community.",
+};
+
 import bodystyles from "./body.module.css";
 import Link from "next/link";
 import userstyles from "./userprofile.module.css";

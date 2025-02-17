@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "All Posts - Social Network",
+  description:
+    "Browse through all posts shared by users on Social Network. Discover new content, engage with others, and be part of the conversation.",
+};
+
 import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
 import { db } from "@/utils/dbConnection";

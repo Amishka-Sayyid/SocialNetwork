@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Update Profile - Social Network",
+  description:
+    "Edit your personal information, update your profile picture, and manage your preferences on Social Network. Share your latest thoughts and connect with others.",
+};
+
 import { db } from "@/utils/dbConnection";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";

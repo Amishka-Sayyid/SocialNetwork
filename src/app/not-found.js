@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Page Not Found - Social Network",
+  description:
+    "Oops! The page you're looking for doesn't exist. Explore our Social Network, connect with friends, and share moments.",
+};
+
 import Link from "next/link";
 import userstyles from "./userprofile.module.css";
 import bodystyles from "./body.module.css";

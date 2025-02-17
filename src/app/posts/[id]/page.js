@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Create Post - Social Network",
+  description:
+    "Create and share your thoughts with the Social Network community. Express yourself, post updates, and engage with others.",
+};
+
 import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
 import { db } from "@/utils/dbConnection";
