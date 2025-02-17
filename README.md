@@ -24,6 +24,8 @@ _Required_
     🎯 Enable users to create posts associated with their Clerk userId. Posts should be displayed on the user’s profile page.
     =>this in user/[username] the user detail allong with the associated posts can be seen and in posts all posts from all users are there.
 
+    -🎯 Create and display an error/not found page if the user visits a page that doesn’t exist.
+
     for stretch user
     - i have done an update / delete for the user profile
 
@@ -38,7 +40,9 @@ _Required_
 
 🎯 Were there any requirements or goals that you were unable to achieve?
 
-    only this left 🎯 Create and display an error/not found page if the user visits a page that doesn’t exist.
+    🏹 Let users follow each other by establishing a follower and followee relationship between profiles.
+
+    🏹 Enable users to like posts by linking their user_id to the liked_post in a junction table.
 
 🎯 If so, what was it that you found difficult about these tasks?
 
@@ -53,6 +57,8 @@ _Optional_
 🏹Requesting feedback about a specific part of your submission.
 
 🏹What useful external sources helped you complete the assignment (e.g Youtube tutorials)?
+
+    -class workshops helped me alot i refered back to it  alot when doing the assignment.
 
     -https://youtu.be/t90U6iuv8wo?si=kuDPz41otUkt7Ig9
 
