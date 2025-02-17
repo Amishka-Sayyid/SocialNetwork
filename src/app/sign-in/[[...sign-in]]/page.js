@@ -1,19 +1,8 @@
 "use client";
 
-import { SignIn, useSignIn } from "@clerk/nextjs";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { SignIn } from "@clerk/nextjs";
 
 export default function SignInPage() {
-  const { isSignedIn } = useSignIn();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (isSignedIn) {
-      router.push("/profile");
-    }
-  }, [isSignedIn, router]);
-
   return (
     <>
       <div

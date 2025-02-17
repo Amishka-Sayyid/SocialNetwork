@@ -1,19 +1,8 @@
 "use client";
 
-import { SignUp, useClerk } from "@clerk/nextjs";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { SignUp } from "@clerk/nextjs";
 
 export default function SignUpPage() {
-  const { user } = useClerk();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (user) {
-      router.push("/profile");
-    }
-  }, [user, router]);
-
   return (
     <>
       <div

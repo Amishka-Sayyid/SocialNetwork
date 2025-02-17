@@ -44,17 +44,19 @@ export default async function PostsPage() {
                 key={post.id}
                 className="overflow-hidden rounded-lg shadow-lg"
               >
-                <Image
-                  src={
-                    post.src ||
-                    "https://www.shutterstock.com/image-vector/image-icon-trendy-flat-style-600nw-643080895.jpg"
-                  }
-                  alt={post.title || "No title available"}
-                  width={200}
-                  height={200}
-                  style={{ objectFit: "cover" }}
-                  className="w-full h-full"
-                />
+                <Link href={`/viewpost/${post.id}`}>
+                  <Image
+                    src={
+                      post.src ||
+                      "https://www.shutterstock.com/image-vector/image-icon-trendy-flat-style-600nw-643080895.jpg"
+                    }
+                    alt={post.title || "No title available"}
+                    width={200}
+                    height={200}
+                    style={{ objectFit: "cover" }}
+                    className="w-full h-full"
+                  />
+                </Link>
               </div>
             ))
           )}
