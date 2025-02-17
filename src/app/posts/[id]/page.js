@@ -4,7 +4,8 @@ import { db } from "@/utils/dbConnection";
 import bodystyles from "../../body.module.css";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-export default async function IdPage({ params }) {
+
+export default async function CreatePost({ params }) {
   const { id } = params;
   const { userId } = await auth();
 
@@ -32,17 +33,13 @@ export default async function IdPage({ params }) {
     const src = formValues.get("src");
     const foreignkey = id;
 
-    try {
-      await db.query(
-        `INSERT INTO socialposts (title, content, src, userid) VALUES ($1, $2, $3, $4)`,
-        [title, content, src, foreignkey]
-      );
+    await db.query(
+      `INSERT INTO socialposts (title, content, src, userid) VALUES ($1, $2, $3, $4)`,
+      [title, content, src, foreignkey]
+    );
 
-      revalidatePath("/posts");
-      redirect("/posts");
-    } catch (error) {
-      console.error("Error submitting comment:", error);
-    }
+    revalidatePath(`/posts`);
+    redirect(`/posts`);
   }
 
   return (
