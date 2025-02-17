@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import bodystyles from "../../body.module.css";
 import userstyles from "../../userprofile.module.css";
+import { notFound } from "next/navigation";
+
 export default async function UserProfilePage({ params }) {
   const { userId } = await auth();
 
@@ -14,7 +16,7 @@ export default async function UserProfilePage({ params }) {
   ]);
 
   if (user.rows.length === 0) {
-    return <h1>User not found</h1>;
+    notFound();
   }
 
   const wrangledUser = user.rows[0];
