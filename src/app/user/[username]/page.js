@@ -9,10 +9,9 @@ export default async function UserProfilePage({ params }) {
 
   const { username } = params;
 
-  const user = await db.query(
-    `SELECT * FROM userprofile WHERE username = $1 AND user_id = $2`,
-    [username, userId]
-  );
+  const user = await db.query(`SELECT * FROM userprofile WHERE username = $1`, [
+    username,
+  ]);
 
   if (user.rows.length === 0) {
     return <h1>User not found</h1>;
@@ -25,7 +24,6 @@ export default async function UserProfilePage({ params }) {
     [wrangledUser.id]
   );
 
-  // Return the user profile with posts
   return (
     <>
       <div
@@ -57,6 +55,7 @@ export default async function UserProfilePage({ params }) {
             <p className="text-gray-600 mt-2">{wrangledUser.about}</p>
           </div>
 
+          {/* showing this link only to owner of profile */}
           {userId === wrangledUser.user_id && (
             <div className="flex  items-center justify-center p-2 gap-3">
               <Link
