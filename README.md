@@ -25,9 +25,12 @@ _Required_
     =>this in user/[username] the user detail allong with the associated posts can be seen and in posts all posts from all users are there.
 
     for stretch user
-    - ive done an update / delete fro the user profile
-    -🐿️ As a user, I want to be prompted to complete my biography if it’s left blank after logging in, ensuring that my profile is complete and informative.
-    -for this when one goes to profile if its there 1st time they can see create profile link (this can only be seen once if no profile created)after they can see the other links
+    - i have done an update / delete for the user profile
+
+    -🏹 Ensure that a user’s biography cannot be left blank. If a user logs in without one, prompt them to add this information.
+    ->for this when one goes to profile if its there 1st time they can see create profile link (this can only be seen once if no profile created)after they can see the other links
+
+    -done this 🏹 Allow users to view other profiles directly from posts they see on the global timeline, using a dynamic users route.
 
 🎯 Were there any requirements or goals that you were unable to achieve?
 
