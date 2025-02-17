@@ -24,7 +24,7 @@ export const metadata = {
       "Every image tells a story — what's yours? Join the Social Network to meet new people, share posts, and engage in lively discussions.",
     type: "website",
     url: "https://social-network-wk-9.vercel.app/",
-    images: ["/design1 Phone.png"],
+    images: [""],
   },
 };
 
