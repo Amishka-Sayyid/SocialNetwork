@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Profile & Account Settings - Social Network",
+  description:
+    "Manage your account settings, update your profile, and control your posts on Social Network. Create, edit, and delete your content securely.",
+};
+
 import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
 import { db } from "@/utils/dbConnection";

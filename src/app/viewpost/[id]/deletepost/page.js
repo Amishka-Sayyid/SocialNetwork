@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Delete Post - Social Network",
+  description:
+    "Are you sure you want to delete this post? This action is permanent.",
+};
+
 import { db } from "@/utils/dbConnection";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";

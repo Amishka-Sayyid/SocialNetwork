@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "User Profile - Social Network",
+  description:
+    "Welcome to your profile! Edit your information, share updates, and connect with others in the Social Network community.",
+};
+
 import { db } from "@/utils/dbConnection";
 import { auth } from "@clerk/nextjs/server";
 import Image from "next/image";
