@@ -21,6 +21,14 @@ _Required_
     🎯 Enable users to create a user profile, and input profile information (such as a user biography) using a form. Users and user information should be stored in their own table in the database and handled with an appropriate route (e.g. /user/[userId]).
     =>here i created a profile page. when user is new and hasn't created a profile they see a link create profile this link is only available once when user is new to create the profile after on the page they see the update and delete links. this page(/profile) is protected and only users with account can view the respective links inside the page can only show the details of each user alone.
 
+    🎯 Enable users to create posts associated with their Clerk userId. Posts should be displayed on the user’s profile page.
+    =>this in user/[username] the user detail allong with the associated posts can be seen and in posts all posts from all users are there.
+
+    for stretch user
+    - ive done an update / delete fro the user profile
+    -🐿️ As a user, I want to be prompted to complete my biography if it’s left blank after logging in, ensuring that my profile is complete and informative.
+    -for this when one goes to profile if its there 1st time they can see create profile link (this can only be seen once if no profile created)after they can see the other links
+
 🎯 Were there any requirements or goals that you were unable to achieve?
 
 🎯 If so, what was it that you found difficult about these tasks?
