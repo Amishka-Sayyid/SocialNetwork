@@ -18,7 +18,7 @@ export default async function PostsPage() {
 
   const personalid = user.rows[0].id;
 
-  const posts = await db.query("SELECT * FROM socialposts");
+  const posts = await db.query("SELECT * FROM socialposts ORDER BY id DESC");
 
   return (
     <>

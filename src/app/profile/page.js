@@ -38,9 +38,10 @@ export default async function Profile() {
   const personalid = user.rows[0].id;
 
   // Fetching posts created by this user
-  const posts = await db.query("SELECT * FROM socialposts WHERE userid = $1", [
-    personalid,
-  ]);
+  const posts = await db.query(
+    `SELECT * FROM socialposts WHERE userid = $1 ORDER BY id DESC`,
+    [personalid]
+  );
 
   return (
     <>
