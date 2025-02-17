@@ -1,10 +1,10 @@
+("use client");
+
 export const metadata = {
   title: "Sign In - Social Network",
   description:
     "Sign in to your account on Social Network. Access your profile, connect with friends, and engage with the community.",
 };
-
-("use client");
 
 import { SignIn } from "@clerk/nextjs";
 
