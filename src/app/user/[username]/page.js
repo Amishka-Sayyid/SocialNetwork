@@ -57,12 +57,20 @@ export default async function UserProfilePage({ params }) {
           </div>
 
           {userId === wrangledUser.user_id && (
-            <Link
-              href={`/posts/${wrangledUser.id}`}
-              className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 p-2 rounded text-black"
-            >
-              Add Post
-            </Link>
+            <div className="flex  items-center justify-center p-2 gap-3">
+              <Link
+                href={`/posts/${wrangledUser.id}`}
+                className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 p-2 rounded text-black"
+              >
+                Add Post
+              </Link>
+              <Link
+                href={`/profile`}
+                className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 p-2 rounded text-black"
+              >
+                edit Post
+              </Link>
+            </div>
           )}
         </div>
       </div>
