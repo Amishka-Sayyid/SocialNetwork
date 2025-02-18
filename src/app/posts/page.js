@@ -18,27 +18,6 @@ export default async function PostsPage() {
     id,
   ]);
 
-  if (!user.rows.length) {
-    return (
-      <div
-        className={` ${userstyles.section} flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white`}
-      >
-        <h1 className={`${bodystyles.h1} text-black`}>
-          You do not have a profile yet.
-        </h1>
-        <p className="text-gray-700 mb-6">
-          Please create a profile first to be able to add posts.
-        </p>
-        <Link
-          href="/createProfile"
-          className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 p-2 rounded text-black"
-        >
-          Create Profile
-        </Link>
-      </div>
-    );
-  }
-
   const personalid = user.rows[0].id;
 
   const posts = await db.query("SELECT * FROM socialposts ORDER BY id DESC");
@@ -49,12 +28,14 @@ export default async function PostsPage() {
         className={` ${userstyles.section} flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white`}
       >
         <h1 className={`${bodystyles.h1} text-black`}>Posts Page</h1>
-        <Link
-          href={`/posts/${personalid}`}
-          className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 p-2 rounded text-black"
-        >
-          add Post
-        </Link>
+        {user?.rows?.length > 0 && (
+          <Link
+            href={`/posts/${personalid}`}
+            className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 p-2 rounded text-black"
+          >
+            Add Post
+          </Link>
+        )}
       </div>
       <div className="min-w-full flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white">
         <h1>all posts</h1>
