@@ -5,7 +5,9 @@ export default function Footer() {
       sx={{
         backgroundColor: "#cfaea2",
         minHeight: "10vh",
-        textAlign: "center",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         fontSize: "1.25rem",
         padding: "0.5rem",
         width: "100%",
