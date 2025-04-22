@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased grid grid-rows-[auto_1fr_auto] items-start justify-items-center min-h-screen px-8 pt-0 pb-0 gap-16 w-full sm:px-20`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <ResponsiveAppBar />
           {children}

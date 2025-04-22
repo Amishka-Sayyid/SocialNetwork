@@ -48,7 +48,14 @@ export default function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#cfaea2" }}>
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: "#cfaea2",
+        minHeight: "10vh",
+        placeContent: "center",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -58,7 +65,7 @@ export default function ResponsiveAppBar() {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
+              fontFamily: " Arial, Helvetica, sans-serif",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
@@ -149,9 +156,15 @@ export default function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="User Actions">
               <SignedOut>
-                <SignInButton />
+                <SignInButton
+                  sx={{ color: "#EEF1EF" }}
+                  className="text-white px-2 py-2 rounded-lg hover:bg-[#bc9a92] hover:scale-105 transition duration-300 cursor-pointer "
+                />
 
-                <SignUpButton />
+                <SignUpButton
+                  sx={{ color: "#EEF1EF" }}
+                  className="text-white px-2 py-2 rounded-lg hover:bg-[#bc9a92] hover:scale-105 transition duration-300 cursor-pointer "
+                />
               </SignedOut>
               <SignedIn>
                 <UserButton />

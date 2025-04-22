@@ -10,22 +10,22 @@ import userstyles from "./userprofile.module.css";
 export default function HomePage() {
   return (
     <>
-      <div
-        className={`${bodystyles.section} flex justify-center flex-col items-center w-full sm:w-[500px] md:w-[600px] lg:w-[800px] p-8 rounded-lg shadow-lg bg-white`}
+      <main
+        className={`${bodystyles.section} h-[80vh]  text-[#d1e0e5] text-center flex flex-col justify-center items-center `}
       >
-        <h1 className={bodystyles.h1}>
+        <h1
+          className={`${bodystyles.h1} text-5xl font-semibold mb-4 drop-shadow-lg `}
+        >
           Every Image Tells a Story — What&apos;s Yours?
         </h1>
-        <h2 className={bodystyles.h2}>
+        <h2 className={`${bodystyles.h2} text-2xl  mb-2 `}>
           Share your moments, ideas, and creativity with the world. Whether it’s
           a snapshot of life or a masterpiece in the making, this is your space
           to express, inspire, and connect.
         </h2>
-      </div>
-      <div
-        className={`${userstyles.section} flex justify-center flex-col items-center w-full sm:w-[500px] md:w-[600px] lg:w-[800px] p-8 rounded-lg shadow-lg bg-white`}
-      >
-        <h1 className={`${bodystyles.h1} text-black`}>
+        <h1
+          className={`${bodystyles.h1} text-2xl font-semibold mb-4 drop-shadow-lg `}
+        >
           Navigate Your Next Adventure
         </h1>
         <nav className="flex  items-center justify-center p-2 gap-3">
@@ -48,7 +48,7 @@ export default function HomePage() {
             Profile
           </Link>
         </nav>
-      </div>
+      </main>
     </>
   );
 }
