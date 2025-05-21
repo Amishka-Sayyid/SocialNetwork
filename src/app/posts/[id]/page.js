@@ -49,61 +49,72 @@ export default async function CreatePost({ params }) {
   }
 
   return (
-    <>
-      <div className="flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white">
-        <h1 className={bodystyles.h1}>Create Post</h1>
+    <main className="min-h-screen flex justify-center items-center flex-col w-full sm:w-[500px] max-w-lg p-12 m-2 rounded-lg shadow-lg bg-slate-100 mx-auto">
+      <h1 className={`${bodystyles.h1} mb-8`}>Create Post</h1>
 
-        <form action={handleSubmit}>
-          <fieldset className="flex flex-col items-center border-spacing-1 border-2 border-gray-300 rounded-md w-full p-6">
-            <legend className="text-xl font-bold mb-4;">Post:</legend>
+      <form action={handleSubmit}>
+        <fieldset className="flex flex-col items-center border border-gray-300 rounded-md w-full p-6">
+          <legend className="text-xl font-bold mb-4">Post:</legend>
 
-            <label htmlFor="title" className="mb-2">
-              Title:
-            </label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              required
-              className="mb-4 p-2 border border-gray-300 rounded-md"
-            />
+          <label
+            htmlFor="title"
+            className="mb-1 self-start font-medium text-gray-700"
+          >
+            Title:
+          </label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            required
+            className="mb-4 w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          />
 
-            <label htmlFor="content" className="mb-2">
-              Content:
-            </label>
-            <textarea
-              id="content"
-              name="content"
-              required
-              className="mb-4 p-2 border border-gray-300 rounded-md h-32"
-            ></textarea>
+          <label
+            htmlFor="content"
+            className="mb-1 self-start font-medium text-gray-700"
+          >
+            Content:
+          </label>
+          <textarea
+            id="content"
+            name="content"
+            required
+            className="mb-4 w-full p-2 border border-gray-300 rounded-md h-32 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          ></textarea>
 
-            <label htmlFor="src" className="mb-2">
-              image src:
-            </label>
-            <textarea
-              id="src"
-              name="src"
-              required
-              className="mb-4 p-2 border border-gray-300 rounded-md h-32"
-            ></textarea>
+          <label
+            htmlFor="src"
+            className="mb-1 self-start font-medium text-gray-700"
+          >
+            Image Source URL:
+          </label>
+          <textarea
+            id="src"
+            name="src"
+            required
+            className="mb-4 w-full p-2 border border-gray-300 rounded-md h-24 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          ></textarea>
 
-            <button
-              type="submit"
-              className="bg-emerald-600 text-white py-2 px-4 rounded-md"
-            >
-              Submit Post
-            </button>
-          </fieldset>
-        </form>
-        <h2>click here to return to profile page</h2>
+          <button
+            type="submit"
+            className="bg-emerald-600 hover:bg-emerald-700 transition-colors duration-200 text-white py-2 px-4 rounded-md"
+          >
+            Submit Post
+          </button>
+        </fieldset>
+      </form>
+
+      {/* Add top margin here to create space above this footer block */}
+      <div className="mt-10 text-center">
+        <h2 className="text-lg font-medium mb-2">Return to your profile</h2>
         <Link
           href="/profile"
-          className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 p-2 rounded text-black"
+          className="bg-gray-100 hover:bg-gray-300 transition-colors duration-200 px-4 py-2 rounded text-black"
         >
-          Profile
+          Back to Profile
         </Link>
       </div>
-    </>
+    </main>
   );
 }

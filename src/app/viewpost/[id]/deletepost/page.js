@@ -19,7 +19,7 @@ export default async function Deletepost({ params }) {
     redirect("/profile");
   }
   return (
-    <>
+    <main className="min-h-screen flex justify-center items-center flex-col w-full sm:w-[500px] max-w-lg p-12 m-2 rounded-lg shadow-lg bg-red-100 mx-auto">
       <h1>Would you like to remove this post from your collection?</h1>
       <h2>To proceed, please click the button below.</h2>
       <form action={handleDelete}>
@@ -30,6 +30,6 @@ export default async function Deletepost({ params }) {
           Delete
         </button>
       </form>
-    </>
+    </main>
   );
 }

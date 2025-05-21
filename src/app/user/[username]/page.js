@@ -33,7 +33,7 @@ export default async function UserProfilePage({ params }) {
   );
 
   return (
-    <>
+    <main className="px-2 sm:px-4 md:px-6 lg:px-10 py-4 max-w-7xl mx-auto flex flex-col items-center">
       <div
         className={` ${userstyles.section} flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white`}
       >
@@ -113,6 +113,6 @@ export default async function UserProfilePage({ params }) {
           )}
         </div>
       </div>
-    </>
+    </main>
   );
 }

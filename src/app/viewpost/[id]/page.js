@@ -34,7 +34,7 @@ export default async function ViewPostPage({ params }) {
   console.log(user);
 
   return (
-    <>
+    <main className="px-2 sm:px-4 md:px-6 lg:px-10 py-4 max-w-7xl mx-auto">
       <div className="flex flex-col items-center justify-center">
         <h1 className={`${bodystyles.h1} text-black`}> {wrangledpost.title}</h1>
 
@@ -57,6 +57,6 @@ export default async function ViewPostPage({ params }) {
 
         <p>{wrangledpost.content}</p>
       </div>
-    </>
+    </main>
   );
 }
