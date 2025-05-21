@@ -50,7 +50,7 @@ export default async function Profile() {
   );
 
   return (
-    <>
+    <main className="px-2 sm:px-4 md:px-6 lg:px-10 py-4 max-w-7xl mx-auto flex flex-col items-center">
       <div
         className={`${userstyles.section} flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white`}
       >
@@ -88,13 +88,13 @@ export default async function Profile() {
           </Link>
         </nav>
       </div>
-
+      <br />
       <div
-        className={`${userstyles.section} flex justify-center flex-col items-center w-full sm:w-[500px] max-w-lg p-8 rounded-lg shadow-lg bg-white min-w-full`}
+        className={`${userstyles.section} w-full sm:max-w-3xl p-8 rounded-lg shadow-lg bg-white`}
       >
         <h1 className={`${bodystyles.h1} text-black`}>Your Posts</h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full mt-4">
           {posts.rows.length === 0 ? (
             <div>No posts available.</div>
           ) : (
@@ -109,13 +109,13 @@ export default async function Profile() {
 
                 <nav className="flex items-center justify-between gap-3">
                   <Link href={`/viewpost/${post.id}/updatepost`}>
-                    <button className="bg-emerald-400 text-white p-2 rounded hover:bg-emerald-600">
+                    <button className="bg-emerald-400 text-white p-2 rounded hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-300">
                       Update Post
                     </button>
                   </Link>
 
                   <Link href={`/viewpost/${post.id}/deletepost`}>
-                    <button className="bg-red-500 text-white p-2 rounded hover:bg-red-600">
+                    <button className="bg-red-500 text-white p-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-300">
                       Delete Post
                     </button>
                   </Link>
@@ -125,6 +125,6 @@ export default async function Profile() {
           )}
         </div>
       </div>
-    </>
+    </main>
   );
 }
